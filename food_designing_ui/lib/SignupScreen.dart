@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:food_designing_ui/LoginScreen.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:pushable_button/pushable_button.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -75,7 +77,8 @@ class _SignupScreenState extends State<SignupScreen> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   TextButton(onPressed: (){
-                    Navigator.pushNamed(context, 'login_screen');
+                    Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: LoginScreen(),
+                    duration: Duration(microseconds: 5)));
                   },
                       child: Text("Login Here".toUpperCase(), style: TextStyle(fontSize: 20,
                           color: Colors.black, letterSpacing: 2),))
